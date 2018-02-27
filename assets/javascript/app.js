@@ -6,7 +6,7 @@ var questions = [
      ["Which city is in southern California?", "Los Angeles", "San Francisco", "Santa Cruz", "Eureka", "A"],
      ["Which album was recorded in the 90's?", "The Dark Side of the Moon", "The Rise and Fall of Ziggy Stardust", "Amnesiac", "Remain in Light", "C"],
      ["Where do plums grow?", "moon rocks", "sea weed", "mud", "trees", "D"],
-     ["Which US city is credited as the cultural origin of Techno?", "Denver", "Detroit", "Austin", "Seattle", "D"],
+     ["Which US city is credited as the cultural origin of Techno?", "Denver", "Detroit", "Austin", "Seattle", "B"],
      ["Which brand does not make cameras?", "Nikon", "tin man can", "Canon", "Leica", "B"]
      ];
 // this get function is short for the getElementById function  
@@ -24,19 +24,17 @@ function renderQuestion(){
     // stops rest of renderQuestion function running when test is completed
     return false;
   }
-  get("test_status").innerHTML = "Question "+(pos+1)+" of "+questions.legnth;
+  get("test_status").innerHTML = "Question "+(pos+1)+" of "+questions.length;
     question = questions[pos][0];
     chA = questions[pos][1];
+    chB = questions[pos][2];
     chC = questions[pos][3];
     chD = questions[pos][4];
-    chD = questions[pos][4];
-    chB = questions[pos][2];
     test.innerHTML = "<h3>"+question+"</h3>";
     test.innerHTML += "<input type='radio' name='choices' value='A'> "+chA+"<br>";
+    test.innerHTML += "<input type='radio' name='choices' value='B'> "+chB+"<br>";
     test.innerHTML += "<input type='radio' name='choices' value='C'> "+chC+"<br>";
     test.innerHTML += "<input type='radio' name='choices' value='D'> "+chD+"<br>";
-    test.innerHTML += "<input type='radio' name='choices' value='D'> "+chD+"<br>";
-    test.innerHTML += "<input type='radio' name='choices' value='B'> "+chB+"<br>";
     test.innerHTML += "<button onclick='checkAnswer()'>Submit Answer</button>";
 }
 function checkAnswer(){
